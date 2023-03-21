@@ -13,3 +13,33 @@ In this example I'm using the constraint system set by the is_zero gadget + sett
 ```
 cargo test -- --nocapture test_example3
 ```
+
+## Example4
+
+Simple range check circuit `Config`. Given a value `v` and a maximum range that the value, we constraint the value. 
+
+```
+cargo test -- --nocapture test_range_check_1
+```
+
+```
+cargo test --all-features -- --nocapture print_range_check_1
+```
+
+## Example5
+
+Extend the range check using lookup arguments. Useful when you want to check it against a large range. Create the `Config` to support that
+
+```
+cargo test -- --nocapture test_range_check_2
+```
+
+```
+cargo test --all-features -- --nocapture print_range_check_2
+```
+
+## Example6
+
+Mix this range check `Config` with a word decompositon `Config`.
+
+
