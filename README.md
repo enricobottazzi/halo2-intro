@@ -1,4 +1,6 @@
-# Halo2-more-examples
+# Halo2-more-examples-part-2
+
+The part 1 of this tutorial can be found here => https://github.com/enricobottazzi/halo2-fibonacci-ex/blob/master/README.md
 
 These examples are based on this tutorial => https://learn.0xparc.org/materials/halo2/learning-group-1/exercise-1
 
