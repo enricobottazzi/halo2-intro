@@ -39,7 +39,7 @@ impl<F: FieldExt, const RANGE: usize> RangeCheckConfig<F, RANGE> {
             q_range_check,
             value,
             _marker: PhantomData
-        }; 
+        };
 
         // range-check gate
         // For a value v and a range R, check that v < R
@@ -155,17 +155,18 @@ mod tests {
             };
             let prover = MockProver::run(k, &circuit, vec![]).unwrap();
             // prover.assert_satisfied(); // this should fail!
-            assert_eq!(
-                prover.verify(),
-                Err(vec![VerifyFailure::ConstraintNotSatisfied {
-                    constraint: ((0, "range check").into(), 0, "range check").into(),
-                    location: FailureLocation::InRegion {
-                        region: (0, "Assign value").into(),
-                        offset: 0
-                    },
-                    cell_values: vec![(((Any::Advice, 0).into(), 0).into(), "0x8".to_string())]
-                }])
-            );
+            prover.assert_satisfied();
+            // assert_eq!(
+            //     prover.verify(),
+            //     Err(vec![VerifyFailure::ConstraintNotSatisfied {
+            //         constraint: ((0, "range check").into(), 0, "range check").into(),
+            //         location: FailureLocation::InRegion {
+            //             region: (0, "Assign value").into(),
+            //             offset: 0
+            //         },
+            //         cell_values: vec![(((Any::Advice, 0).into(), 0).into(), "0x8".to_string())]
+            //     }])
+            // );
         }
     }
 
