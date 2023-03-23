@@ -46,6 +46,10 @@ cargo test --all-features -- --nocapture print_range_check_2
 
 ## Example6
 
+Improvement on example5 by looking up on smaller ranges. For example, our lookup table right now is 8 bits. But sometimes we might not want to constraint for the maximum amount of 8 bits. This implementation will refine the lookup argument to support such feature.
+
+## Example6
+
 Mix this range check `Config` with a word decompositon `Config`.
 
 
